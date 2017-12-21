@@ -46,6 +46,9 @@ namespace WzComparerR2
         {
             this.advTree1.Nodes.Clear();
 
+            this.advTree1.Nodes.Add(new Node(string.Format("GMS <font color=\"#808080\">v0.1</font>")));
+            this.advTree1.Nodes.Add(new Node(string.Format("[GMS] English Translation <font color=\"#808080\">Zelkova</font>")));
+
             if (PluginBase.PluginManager.LoadedPlugins.Count > 0)
             {
                 foreach (var plugin in PluginBase.PluginManager.LoadedPlugins)
@@ -60,7 +63,7 @@ namespace WzComparerR2
             }
             else
             {
-                string nodeTxt = "<font color=\"#808080\">没有加载插件_(:з」∠)_</font>";
+                string nodeTxt = "<font color=\"#808080\">No plugins were loaded _(:з」∠)_</font>";
                 Node node = new Node(nodeTxt);
                 this.advTree1.Nodes.Add(node);
             }

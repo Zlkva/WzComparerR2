@@ -101,11 +101,11 @@
             this.superTabControl1.Location = new System.Drawing.Point(0, 0);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
-            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.superTabControl1.SelectedTabIndex = 0;
             this.superTabControl1.Size = new System.Drawing.Size(304, 171);
             this.superTabControl1.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Left;
-            this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.superTabControl1.TabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.superTabControl1.TabIndex = 0;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabItem1,
@@ -144,7 +144,7 @@
             this.checkBoxX10.Size = new System.Drawing.Size(125, 18);
             this.checkBoxX10.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX10.TabIndex = 7;
-            this.checkBoxX10.Text = "显示技能扩展属性";
+            this.checkBoxX10.Text = "Display Skill Properties";
             // 
             // labelX3
             // 
@@ -159,7 +159,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(142, 30);
             this.labelX3.TabIndex = 6;
-            this.labelX3.Text = "对tooltip窗口为焦点，<br/>\r\n使用 <b>- + [ ]</b> 键调整等级";
+            this.labelX3.Text = "Focus on tooltip window，<br/>\r\nUse the <b>- + [ ]</b> keys to adjust the level";
             // 
             // comboBoxEx2
             // 
@@ -217,7 +217,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(81, 18);
             this.labelX2.TabIndex = 4;
-            this.labelX2.Text = "调整等级间隔";
+            this.labelX2.Text = "Adjust the level interval";
             // 
             // labelX1
             // 
@@ -231,7 +231,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(81, 18);
             this.labelX1.TabIndex = 3;
-            this.labelX1.Text = "默认技能等级";
+            this.labelX1.Text = "Default skill level";
             // 
             // comboBoxEx1
             // 
@@ -280,7 +280,7 @@
             this.checkBoxX2.Size = new System.Drawing.Size(125, 18);
             this.checkBoxX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX2.TabIndex = 1;
-            this.checkBoxX2.Text = "显示技能动作延时";
+            this.checkBoxX2.Text = "Show skill delay";
             // 
             // checkBoxX1
             // 
@@ -295,7 +295,7 @@
             this.checkBoxX1.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX1.TabIndex = 0;
-            this.checkBoxX1.Text = "显示技能代码";
+            this.checkBoxX1.Text = "Display skill ID";
             // 
             // superTabItem1
             // 
@@ -327,7 +327,7 @@
             this.checkBoxX7.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX7.TabIndex = 3;
-            this.checkBoxX7.Text = "显示制造代码";
+            this.checkBoxX7.Text = "Display recipe ID";
             // 
             // superTabItem4
             // 
@@ -361,7 +361,7 @@
             this.checkBoxX9.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX9.TabIndex = 4;
-            this.checkBoxX9.Text = "图纸联动道具";
+            this.checkBoxX9.Text = "Display recipe results";
             // 
             // checkBoxX8
             // 
@@ -376,7 +376,7 @@
             this.checkBoxX8.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX8.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX8.TabIndex = 3;
-            this.checkBoxX8.Text = "图纸联动配方";
+            this.checkBoxX8.Text = "Display recipe material";
             // 
             // checkBoxX5
             // 
@@ -391,7 +391,7 @@
             this.checkBoxX5.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX5.TabIndex = 2;
-            this.checkBoxX5.Text = "显示物品代码";
+            this.checkBoxX5.Text = "Display Item ID";
             // 
             // superTabItem3
             // 
@@ -426,7 +426,7 @@
             this.checkBoxX6.Size = new System.Drawing.Size(125, 18);
             this.checkBoxX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX6.TabIndex = 3;
-            this.checkBoxX6.Text = "显示装备成长信息";
+            this.checkBoxX6.Text = "Show growing equip info";
             // 
             // checkBoxX4
             // 
@@ -441,7 +441,7 @@
             this.checkBoxX4.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX4.TabIndex = 2;
-            this.checkBoxX4.Text = "显示武器攻速";
+            this.checkBoxX4.Text = "Show weapon att speed";
             // 
             // checkBoxX3
             // 
@@ -456,7 +456,7 @@
             this.checkBoxX3.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX3.TabIndex = 1;
-            this.checkBoxX3.Text = "显示装备代码";
+            this.checkBoxX3.Text = "Display equip ID";
             // 
             // superTabItem2
             // 
@@ -495,7 +495,7 @@
             this.buttonX2.Size = new System.Drawing.Size(60, 23);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX2.TabIndex = 1;
-            this.buttonX2.Text = "取消";
+            this.buttonX2.Text = "Cancel";
             // 
             // buttonX1
             // 
@@ -507,7 +507,7 @@
             this.buttonX1.Size = new System.Drawing.Size(60, 23);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 0;
-            this.buttonX1.Text = "确定";
+            this.buttonX1.Text = "Confirm";
             // 
             // checkBoxX11
             // 
@@ -522,7 +522,7 @@
             this.checkBoxX11.Size = new System.Drawing.Size(101, 18);
             this.checkBoxX11.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.checkBoxX11.TabIndex = 4;
-            this.checkBoxX11.Text = "显示勋章样式";
+            this.checkBoxX11.Text = "Medal/Title Preview";
             // 
             // FrmQuickViewSetting
             // 
@@ -536,7 +536,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmQuickViewSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "快速预览设置";
+            this.Text = "Quick Preview Settings";
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);

@@ -99,16 +99,16 @@ namespace WzComparerR2
                 item.GetFileLength();
                 if (item.FileLength > 0)
                 {
-                    MessageBoxEx.Show(string.Format("文件大小：{0:N0} bytes, 更新时间：{1:yyyy-MM-dd HH:mm:ss}", item.FileLength, item.LastModified));
+                    MessageBoxEx.Show(string.Format("File Size：{0:N0} bytes, Update Time：{1:yyyy-MM-dd HH:mm:ss}", item.FileLength, item.LastModified));
                 }
                 else
                 {
-                    MessageBoxEx.Show("文件不存在");
+                    MessageBoxEx.Show("File does not exist");
                 }
             }
             catch (Exception ex)
             {
-                MessageBoxEx.Show("出现错误：" + ex.Message);
+                MessageBoxEx.Show("An error occurred：" + ex.Message);
             }
         }
 
@@ -138,7 +138,7 @@ namespace WzComparerR2
         private void buttonXOpen1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Title = "请选择补丁文件路径";
+            dlg.Title = "Please select the patch file path";
             dlg.Filter = "*.patch;*.exe|*.patch;*.exe";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -149,7 +149,7 @@ namespace WzComparerR2
         private void buttonXOpen2_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dlg = new FolderBrowserDialog();
-            dlg.Description = "请选择冒险岛文件夹路径";
+            dlg.Description = "Please select MaplelStory folder path";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 txtMSFolder.Text = dlg.SelectedPath;
@@ -168,7 +168,7 @@ namespace WzComparerR2
                 }
                 else
                 {
-                    MessageBoxEx.Show("已经开始了一个补丁进程...");
+                    MessageBoxEx.Show("Patch already in process...");
                     return;
                 }
             }
@@ -176,7 +176,7 @@ namespace WzComparerR2
             if (chkCompare.Checked)
             {
                 FolderBrowserDialog dlg = new FolderBrowserDialog();
-                dlg.Description = "请选择对比报告输出文件夹";
+                dlg.Description = "Please select the comparison output folder";
                 if (dlg.ShowDialog() != DialogResult.OK)
                 {
                     return;
@@ -214,15 +214,15 @@ namespace WzComparerR2
             {
                 patcher = new WzPatcher(patchFile);
                 patcher.PatchingStateChanged += new EventHandler<PatchingEventArgs>(patcher_PatchingStateChanged);
-                AppendStateText("正在检查补丁...");
+                AppendStateText("Checking Patch...");
                 patcher.OpenDecompress();
-                AppendStateText("成功\r\n");
+                AppendStateText("Success\r\n");
                 if (prePatch)
                 {
-                    AppendStateText("正在预读补丁...\r\n");
+                    AppendStateText("Pre-reading the patch...\r\n");
                     long decompressedSize = patcher.PrePatch();
-                    AppendStateText(string.Format("补丁大小: {0:N0} bytes...\r\n", decompressedSize));
-                    AppendStateText(string.Format("文件变动: {0} 个...\r\n",
+                    AppendStateText(string.Format("Patch Size: {0:N0} bytes...\r\n", decompressedSize));
+                    AppendStateText(string.Format("File Changes: {0} ...\r\n",
                         patcher.PatchParts == null ? -1 : patcher.PatchParts.Count));
                     txtNotice.Text = patcher.NoticeText;
                     foreach (PatchPartContext part in patcher.PatchParts)
@@ -230,7 +230,7 @@ namespace WzComparerR2
                         advTreePatchFiles.Nodes.Add(CreateFileNode(part));
                     }
                     advTreePatchFiles.Enabled = true;
-                    AppendStateText("等待调整更新顺序...\r\n");
+                    AppendStateText("Waiting to adjust the update order...\r\n");
                     waiting = true;
                     waitHandle.WaitOne();
                     advTreePatchFiles.Enabled = false;
@@ -243,15 +243,15 @@ namespace WzComparerR2
                         }
                     }
                 }
-                AppendStateText("开始更新\r\n");
+                AppendStateText("Start Update\r\n");
                 DateTime time = DateTime.Now;
                 patcher.Patch(msFolder);
                 TimeSpan interval = DateTime.Now - time;
-                MessageBoxEx.Show(this, "补丁结束，用时" + interval.ToString(), "Patcher");
+                MessageBoxEx.Show(this, "Patch complete，time taken:" + interval.ToString(), "Patcher");
             }
             catch (ThreadAbortException)
             {
-                MessageBoxEx.Show("补丁中止。", "Patcher");
+                MessageBoxEx.Show("Patch aborted", "Patcher");
             }
             catch (Exception ex)
             {
@@ -278,22 +278,22 @@ namespace WzComparerR2
             switch (e.State)
             {
                 case PatchingState.PatchStart:
-                    AppendStateText("开始更新" + e.Part.FileName + "\r\n");
+                    AppendStateText("Start Update" + e.Part.FileName + "\r\n");
                     break;
                 case PatchingState.VerifyOldChecksumBegin:
-                    AppendStateText("  检查旧文件checksum...");
+                    AppendStateText("  Verifying old checksum...");
                     break;
                 case PatchingState.VerifyOldChecksumEnd:
-                    AppendStateText("  结束\r\n");
+                    AppendStateText("  Complete\r\n");
                     break;
                 case PatchingState.VerifyNewChecksumBegin:
-                    AppendStateText("  检查新文件checksum...");
+                    AppendStateText("  Verifying new checksum...");
                     break;
                 case PatchingState.VerifyNewChecksumEnd:
-                    AppendStateText("  结束\r\n");
+                    AppendStateText("  Complete\r\n");
                     break;
                 case PatchingState.TempFileCreated:
-                    AppendStateText("  创建临时文件...\r\n");
+                    AppendStateText("  Create a temporary file...\r\n");
                     progressBarX1.Maximum = e.Part.NewFileLength;
                     break;
                 case PatchingState.TempFileBuildProcessChanged:
@@ -301,7 +301,7 @@ namespace WzComparerR2
                     progressBarX1.Text = string.Format("{0:N0}/{1:N0}", e.CurrentFileLength, e.Part.NewFileLength);
                     break;
                 case PatchingState.TempFileClosed:
-                    AppendStateText("  关闭临时文件...\r\n");
+                    AppendStateText("  Close the temporary file...\r\n");
                     progressBarX1.Value = 0;
                     progressBarX1.Maximum = 0;
                     progressBarX1.Text = string.Empty;
@@ -315,7 +315,7 @@ namespace WzComparerR2
                         Wz_Structure wzold = new Wz_Structure();
                         try
                         {
-                            AppendStateText("  (comparer)正在对比文件...\r\n");
+                            AppendStateText("  Comparing files...\r\n");
                             EasyComparer comparer = new EasyComparer();
                             comparer.OutputPng = chkOutputPng.Checked;
                             comparer.OutputAddedImg = chkOutputAddedImg.Checked;
@@ -341,7 +341,7 @@ namespace WzComparerR2
                     if (this.deadPatch && e.Part.Type == 1)
                     {
                         ((WzPatcher)sender).SafeMove(e.Part.TempFilePath, e.Part.OldFilePath);
-                        AppendStateText("  (deadpatch)正在应用文件...\r\n");
+                        AppendStateText("  (deadpatch) Applying files...\r\n");
                     }
                     break;
             }
@@ -394,7 +394,7 @@ namespace WzComparerR2
         private void buttonXOpen3_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Title = "请选择补丁文件路径";
+            dlg.Title = "Plelase select the patch file path";
             dlg.Filter = "*.patch;*.exe|*.patch;*.exe";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -405,7 +405,7 @@ namespace WzComparerR2
         private void buttonXOpen4_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dlg = new FolderBrowserDialog();
-            dlg.Description = "请选择冒险岛文件夹路径";
+            dlg.Description = "Please select the MapleStory folder path";
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 txtMSFolder2.Text = dlg.SelectedPath;
@@ -414,15 +414,15 @@ namespace WzComparerR2
 
         private void buttonXCreate_Click(object sender, EventArgs e)
         {
-            MessageBoxEx.Show(@"> 这是一个测试功能...
-> 还没完成 所以请选择patch文件  exe补丁暂时懒得分离
-> 没有检查原客户端版本 为了正确执行请预先确认
-> 暂时不提供文件块的筛选或文件缺失提示
-> 没优化 于是可能生成文件体积较大 但是几乎可以保证完整性", "声明");
+            MessageBoxEx.Show(@"> This is a test function...
+> Not done yet so please choose patch file exe patch temporarily.
+> Did not check the original client version for correct execution, please confirm in advance
+> Not available for file block selection or file missing prompt
+> No optimization so may generate a larger file size but can almost guarantee the integrity", "Notice");
 
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Filter = "*.patch|*.patch";
-            dlg.Title = "选择输出文件";
+            dlg.Title = "Select output file";
             dlg.CheckFileExists = false;
             dlg.InitialDirectory = Path.GetDirectoryName(txtPatchFile2.Text);
             dlg.FileName = Path.GetFileNameWithoutExtension(txtPatchFile2.Text) + "_reverse.patch";

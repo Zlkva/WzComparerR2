@@ -188,7 +188,7 @@
             this.chkDeadPatch.Name = "chkDeadPatch";
             this.chkDeadPatch.Size = new System.Drawing.Size(82, 16);
             this.chkDeadPatch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.chkDeadPatch, new DevComponents.DotNetBar.SuperTooltipInfo("DeadPatch", "", "开启此项后，每更新完一个子文件，将立即覆盖原文件并删除临时文件。这样做会减少临时文件空间的需要，但是伴随一定风险。", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 100)));
+            this.superTooltip1.SetSuperTooltip(this.chkDeadPatch, new DevComponents.DotNetBar.SuperTooltipInfo("DeadPatch", "", "When this item is enabled, every time a subfile is updated, the original file will be immediately overwritten and the temporary file will be deleted. Doing so will reduce the need for temporary file space, but with a certain amount of risk.", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 100)));
             this.chkDeadPatch.TabIndex = 7;
             this.chkDeadPatch.Text = "DeadPatch";
             // 
@@ -204,7 +204,7 @@
             this.chkPrePatch.Name = "chkPrePatch";
             this.chkPrePatch.Size = new System.Drawing.Size(76, 16);
             this.chkPrePatch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.chkPrePatch, new DevComponents.DotNetBar.SuperTooltipInfo("PrePatch", "", "开启此项则会在补丁更新前进行预加载。预加载后可以自由选择要更新的子文件，或调整子文件更新顺序。调整完毕后再次单击\"Patch\"按钮开始更新。", null, null, DevComponents.DotNetBar.eTooltipColor.Default, true, false, new System.Drawing.Size(180, 120)));
+            this.superTooltip1.SetSuperTooltip(this.chkPrePatch, new DevComponents.DotNetBar.SuperTooltipInfo("PrePatch", "", "When enabled, it will be preloaded before the patch is updated. After preloading, you can choose the sub files to be updated freely or adjust the sub file update order. After adjustment, click the \"Patch\"button again to start the update.", null, null, DevComponents.DotNetBar.eTooltipColor.Default, true, false, new System.Drawing.Size(180, 120)));
             this.chkPrePatch.TabIndex = 6;
             this.chkPrePatch.Text = "PrePatch";
             // 
@@ -390,7 +390,7 @@
             this.chkOutputRemovedImg.Name = "chkOutputRemovedImg";
             this.chkOutputRemovedImg.Size = new System.Drawing.Size(125, 16);
             this.chkOutputRemovedImg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.chkOutputRemovedImg, new DevComponents.DotNetBar.SuperTooltipInfo("OutputRemovedImg", "", "对比报告中是否输出被整体移除的Image的完整结构", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 60)));
+            this.superTooltip1.SetSuperTooltip(this.chkOutputRemovedImg, new DevComponents.DotNetBar.SuperTooltipInfo("OutputRemovedImg", "", "Whether the report outputs the complete structure of the image that is removed as a whole is compared with the report", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 60)));
             this.chkOutputRemovedImg.TabIndex = 14;
             this.chkOutputRemovedImg.Text = "OutputRemovedImg";
             // 
@@ -406,7 +406,7 @@
             this.chkOutputAddedImg.Name = "chkOutputAddedImg";
             this.chkOutputAddedImg.Size = new System.Drawing.Size(113, 16);
             this.chkOutputAddedImg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.chkOutputAddedImg, new DevComponents.DotNetBar.SuperTooltipInfo("OutputAddedImg", "", "对比报告中是否输出新增Image的完整结构", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 60)));
+            this.superTooltip1.SetSuperTooltip(this.chkOutputAddedImg, new DevComponents.DotNetBar.SuperTooltipInfo("OutputAddedImg", "", "Compare the report is output the complete structure of the new Image", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 60)));
             this.chkOutputAddedImg.TabIndex = 13;
             this.chkOutputAddedImg.Text = "OutputAddedImg";
             // 
@@ -421,8 +421,8 @@
             this.cmbComparePng.Name = "cmbComparePng";
             this.cmbComparePng.Size = new System.Drawing.Size(120, 21);
             this.cmbComparePng.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.cmbComparePng, new DevComponents.DotNetBar.SuperTooltipInfo("PngComparison", "", "对于对比报告中图片的对比方式。\r\nSizeOnly - 仅对比图片大小，可能会遗漏。\r\nSizeAndDataLength - 同时对比图片大小和压缩流长度，可能" +
-            "会误判。\r\nPixel - 像素级对比，非常精确但可能略耗时。", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, true, new System.Drawing.Size(300, 100)));
+            this.superTooltip1.SetSuperTooltip(this.cmbComparePng, new DevComponents.DotNetBar.SuperTooltipInfo("PngComparison", "", "Comparison of pictures in the comparison report. \r\nSizeOnly - Only image size may be missing, may be missing. \r\nSizeAndDataLength - Simultaneous comparison of picture size and compressed stream length, possible" +
+            "Will be misjudged. \r\nPixel - pixel-level contrast, very accurate but may be slightly time-consuming.", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, true, new System.Drawing.Size(300, 100)));
             this.cmbComparePng.TabIndex = 12;
             // 
             // chkOutputPng
@@ -440,7 +440,7 @@
             this.chkOutputPng.Name = "chkOutputPng";
             this.chkOutputPng.Size = new System.Drawing.Size(82, 16);
             this.chkOutputPng.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.chkOutputPng, new DevComponents.DotNetBar.SuperTooltipInfo("OutputPng", "", "对比报告中是否输出有差异的图片文件。", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 60)));
+            this.superTooltip1.SetSuperTooltip(this.chkOutputPng, new DevComponents.DotNetBar.SuperTooltipInfo("OutputPng", "", "Compare the report is output in the picture file has a difference.", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 60)));
             this.chkOutputPng.TabIndex = 11;
             this.chkOutputPng.Text = "OutputPng";
             // 
@@ -456,7 +456,7 @@
             this.chkCompare.Name = "chkCompare";
             this.chkCompare.Size = new System.Drawing.Size(70, 16);
             this.chkCompare.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.chkCompare, new DevComponents.DotNetBar.SuperTooltipInfo("Compare", "", "开启此项后，每更新完一个Wz文件，将会进行新旧文件对比并输出更新报告。有一些额外的选项可以控制对比更新的执行方式。\r\n对比过程出错不会影响补丁继续执行。", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(238, 100)));
+            this.superTooltip1.SetSuperTooltip(this.chkCompare, new DevComponents.DotNetBar.SuperTooltipInfo("Compare", "", "When this item is enabled, every time a Wz file is updated, the new and old files will be compared and the update report will be output. There are some additional options to control how comparisons are executed. \r\nError comparison process will not affect the patch to continue.", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(238, 100)));
             this.chkCompare.TabIndex = 10;
             this.chkCompare.Text = "Compare";
             // 
@@ -506,11 +506,11 @@
             this.superTabControl1.Location = new System.Drawing.Point(0, 0);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
-            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.superTabControl1.SelectedTabIndex = 1;
             this.superTabControl1.Size = new System.Drawing.Size(360, 180);
             this.superTabControl1.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Left;
-            this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.superTabControl1.TabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.superTabControl1.TabIndex = 2;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabItem1,
@@ -862,7 +862,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(285, 18);
             this.labelX3.TabIndex = 1;
-            this.labelX3.Text = "这功能太危险了在考虑要不要放出来...还是算了吧";
+            this.labelX3.Text = "This feature is dangerous";
             // 
             // superTooltip1
             // 
@@ -880,7 +880,7 @@
             this.chkResolvePngLink.Name = "chkResolvePngLink";
             this.chkResolvePngLink.Size = new System.Drawing.Size(95, 16);
             this.chkResolvePngLink.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.superTooltip1.SetSuperTooltip(this.chkResolvePngLink, new DevComponents.DotNetBar.SuperTooltipInfo("ResolvePngLink", "", "对比报告中是否智能解析对比被Link的图片\r\n这会过滤掉无用的变更内容", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 72)));
+            this.superTooltip1.SetSuperTooltip(this.chkResolvePngLink, new DevComponents.DotNetBar.SuperTooltipInfo("ResolvePngLink", "", "Comparison report is intelligent resolution is Link pictures\r\nThis will filter out useless changes", null, null, DevComponents.DotNetBar.eTooltipColor.System, true, false, new System.Drawing.Size(180, 72)));
             this.chkResolvePngLink.TabIndex = 18;
             this.chkResolvePngLink.Text = "ResolveLink";
             // 
@@ -892,7 +892,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmPatcher";
-            this.Text = "更新装置";
+            this.Text = "Update device";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPatcher_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput2)).EndInit();

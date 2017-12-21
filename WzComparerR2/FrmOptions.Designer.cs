@@ -75,7 +75,7 @@
             this.buttonX2.Size = new System.Drawing.Size(60, 23);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX2.TabIndex = 1;
-            this.buttonX2.Text = "取消";
+            this.buttonX2.Text = "Cancel";
             // 
             // buttonX1
             // 
@@ -88,7 +88,7 @@
             this.buttonX1.Size = new System.Drawing.Size(60, 23);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.buttonX1.TabIndex = 0;
-            this.buttonX1.Text = "确定";
+            this.buttonX1.Text = "OK";
             // 
             // superTabControl1
             // 
@@ -113,11 +113,11 @@
             this.superTabControl1.Location = new System.Drawing.Point(0, 0);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
-            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.superTabControl1.SelectedTabIndex = 0;
             this.superTabControl1.Size = new System.Drawing.Size(304, 171);
             this.superTabControl1.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Left;
-            this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.superTabControl1.TabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.superTabControl1.TabIndex = 4;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabItem1});
@@ -161,7 +161,7 @@
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(68, 18);
             this.labelX1.TabIndex = 2;
-            this.labelX1.Text = "wz默认编码";
+            this.labelX1.Text = "Wz Encoding";
             // 
             // chkWzAutoSort
             // 
@@ -176,14 +176,14 @@
             this.chkWzAutoSort.Size = new System.Drawing.Size(125, 18);
             this.chkWzAutoSort.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.chkWzAutoSort.TabIndex = 0;
-            this.chkWzAutoSort.Text = "Wz加载时自动排序";
+            this.chkWzAutoSort.Text = "Auto-detect Wz";
             // 
             // superTabItem1
             // 
             this.superTabItem1.AttachedControl = this.superTabControlPanel1;
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "WzLoading";
+            this.superTabItem1.Text = "Wz Settings";
             // 
             // chkAutoCheckExtFiles
             // 
@@ -198,7 +198,7 @@
             this.chkAutoCheckExtFiles.Size = new System.Drawing.Size(193, 18);
             this.chkAutoCheckExtFiles.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.chkAutoCheckExtFiles.TabIndex = 4;
-            this.chkAutoCheckExtFiles.Text = "自动检测扩展wz文件(map2...)";
+            this.chkAutoCheckExtFiles.Text = "Auto-detect split Wz (map2...)";
             // 
             // FrmOptions
             // 
@@ -212,7 +212,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "通用设置";
+            this.Text = "Import settings";
             this.panelEx1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
