@@ -337,7 +337,7 @@ namespace WzComparerR2.CharaSim
             int newGearIndex = Array.IndexOf<ItemBase>(itemTab, newGear);
             if (newGearIndex < 0 || newGear.State != GearState.itemList)
             {
-                throw new InvalidOperationException("未知错误：装备不在背包。");
+                throw new InvalidOperationException("Unknown Error: Equipment not in Inventory");
             }
 
             int onlyEquip;
@@ -347,7 +347,7 @@ namespace WzComparerR2.CharaSim
                 {
                     if (gear.ItemID == newGear.ItemID)
                     {
-                        throw new InvalidOperationException("该道具只能同时装备一个。");
+                        throw new InvalidOperationException("Item can only be equipped once.");
                     }
                 }
             }
@@ -361,7 +361,7 @@ namespace WzComparerR2.CharaSim
             Gear[] removedGear;
             if (!this.equip.AddGear(newGear, out removedGear))
             {
-                throw new InvalidOperationException("未知错误：添加装备失败。");
+                throw new InvalidOperationException("Unknown Error: Failed to add equipment");
             }
 
             CheckGearEnabled();
@@ -393,12 +393,12 @@ namespace WzComparerR2.CharaSim
                 }
                 else
                 {
-                    errorString = "背包已满。";
+                    errorString = "Inventory is full.";
                 }
             }
             else
             {
-                errorString = "能力值不足，无法装备道具。";
+                errorString = "Insufficient ability to equip gear.";
             }
 
             //还原装备
@@ -415,38 +415,38 @@ namespace WzComparerR2.CharaSim
         {
             if (Gear.IsMechanicGear(gear.type) && status.Job / 100 != 35)
             {
-                errorMessage = "只有机械师才能装备。";
+                errorMessage = "Only Mechanic can equip.";
                 return false;
             }
             if (Gear.IsDragonGear(gear.type) && status.Job / 100 != 22)
             {
-                errorMessage = "只有龙神才能装备。";
+                errorMessage = "Only Evan can equip.";
                 return false;
             }
             if (gear.type == GearType.katara && status.Job / 10 != 43)
             {
-                errorMessage = "只有暗影双刀才能装备。";
+                errorMessage = "Only Dual Blade can equip.";
                 return false;
             }
             if (gear.type == GearType.shield &&
                 (status.Job / 10 == 43 || status.Job / 100 == 23 || status.Job / 100 == 31))
             {
-                errorMessage = "该职业无法装备盾牌。";
+                errorMessage = "Your job cannot equip shields.";
                 return false;
             }
             if (gear.type == GearType.magicArrow && status.Job / 100 != 23)
             {
-                errorMessage = "只有双弩精灵职业才能装备。";
+                errorMessage = "Only Mercedes can equip.";
                 return false;
             }
             if (gear.type == GearType.demonShield && status.Job / 100 != 31)
             {
-                errorMessage = "只有恶魔猎手职业才能装备。";
+                errorMessage = "Only Demon Slayer can equip.。";
                 return false;
             }
             if (!checkGearPropReq(gear))
             {
-                errorMessage = "能力值不足，无法装备道具。";
+                errorMessage = "Insufficient ability to equip gear.";
                 return false;
             }
             errorMessage = null;
