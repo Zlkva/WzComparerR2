@@ -191,18 +191,18 @@ namespace WzComparerR2.Comparer
                 //Output Profile
                 sw.WriteLine("<p class=\"wzf\">");
                 sw.WriteLine("<table>");
-                sw.WriteLine("<tr><th>&nbsp;</th><th>文件名</th><th>文件大小</th><th>文件版本</th></tr>");
-                sw.WriteLine("<tr><td>新文件</td><td>{0}</td><td>{1}</td><td>{2}</td></tr>",
+                sw.WriteLine("<tr><th>&nbsp;</th><th>File Name</th><th>File Size</th><th>File Version</th></tr>");
+                sw.WriteLine("<tr><td>New File</td><td>{0}</td><td>{1}</td><td>{2}</td></tr>",
                     string.Join("<br/>", fileNew.Select(wzf => wzf.Header.FileName).ToArray()),
                     string.Join("<br/>", fileNew.Select(wzf => wzf.Header.FileSize.ToString("N0")).ToArray()),
                     string.Join("<br/>", fileNew.Select(wzf => wzf.Header.WzVersion.ToString()).ToArray())
                     );
-                sw.WriteLine("<tr><td>旧文件</td><td>{0}</td><td>{1}</td><td>{2}</td></tr>",
+                sw.WriteLine("<tr><td>Old File</td><td>{0}</td><td>{1}</td><td>{2}</td></tr>",
                     string.Join("<br/>", fileOld.Select(wzf => wzf.Header.FileName).ToArray()),
                     string.Join("<br/>", fileOld.Select(wzf => wzf.Header.FileSize.ToString("N0")).ToArray()),
                     string.Join("<br/>", fileOld.Select(wzf => wzf.Header.WzVersion.ToString()).ToArray())
                     );
-                sw.WriteLine("<tr><td>对比时间</td><td colspan='3'>{0:yyyy-MM-dd HH:mm:ss.fff}</td></tr>", DateTime.Now);
+                sw.WriteLine("<tr><td>Time</td><td colspan='3'>{0:yyyy-MM-dd HH:mm:ss.fff}</td></tr>", DateTime.Now);
                 sw.WriteLine("<tr><td>Parameter</td><td colspan='3'>{0}</td></tr>", string.Join("<br/>", new[] {
                     this.OutputPng ? "-OutputPng" : null,
                     this.OutputAddedImg ? "-OutputAddedImg" : null,
