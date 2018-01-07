@@ -76,7 +76,7 @@ namespace WzComparerR2.Comparer
                 }
                 else
                 {
-                    throw new Exception(string.Format("WZ合并失败，{0}已存在并且存在子级。", fromChild.FullPathToFile));
+                    throw new Exception(string.Format("Wz merge failed，{0} already exists and has children.", fromChild.FullPathToFile));
                 }
             }
         }

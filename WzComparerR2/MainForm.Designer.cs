@@ -288,7 +288,7 @@
             this.ribbonTabItem2,
             this.ribbonTabItem3,
             this.buttonItemStyle});
-            this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
+            this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Arial", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(5, 1);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
@@ -530,11 +530,11 @@
             // 
             // comboItem14
             // 
-            this.comboItem14.Text = "宋体";
+            this.comboItem14.Text = "Times New Roman";
             // 
             // comboItem15
             // 
-            this.comboItem15.Text = "微软雅黑";
+            this.comboItem15.Text = "MS Yahei";
             // 
             // comboItem16
             // 
@@ -542,11 +542,11 @@
             // 
             // comboItem17
             // 
-            this.comboItem17.Text = "굴림체";
+            this.comboItem17.Text = "Lorraine";
             // 
             // comboItem18
             // 
-            this.comboItem18.Text = "돋움";
+            this.comboItem18.Text = "Arial";
             // 
             // itemContainer25
             // 
@@ -591,7 +591,7 @@
             this.buttonItemAutoQuickView.AutoCheckOnClick = true;
             this.buttonItemAutoQuickView.Name = "buttonItemAutoQuickView";
             this.buttonItemAutoQuickView.Text = "AutoQuickView";
-            this.buttonItemAutoQuickView.Tooltip = "开启/关闭自动预览机能";
+            this.buttonItemAutoQuickView.Tooltip = "On/Off Auto Preview";
             this.buttonItemAutoQuickView.Click += new System.EventHandler(this.buttonItemAutoQuickView_Click);
             // 
             // buttonItemQuickViewSetting
@@ -678,7 +678,7 @@
             this.buttonItemCharItem.AutoCheckOnClick = true;
             this.buttonItemCharItem.Name = "buttonItemCharItem";
             this.buttonItemCharItem.Text = "Item";
-            this.buttonItemCharItem.Tooltip = "开启/关闭道具栏";
+            this.buttonItemCharItem.Tooltip = "Open/Close Prop Bar";
             this.buttonItemCharItem.CheckedChanged += new System.EventHandler(this.buttonItemCharItem_CheckedChanged);
             // 
             // itemContainer30
@@ -700,7 +700,7 @@
             this.buttonItemCharaStat.AutoCheckOnClick = true;
             this.buttonItemCharaStat.Name = "buttonItemCharaStat";
             this.buttonItemCharaStat.Text = "Stat";
-            this.buttonItemCharaStat.Tooltip = "开启/关闭状态栏";
+            this.buttonItemCharaStat.Tooltip = "On/Off Status Bar";
             this.buttonItemCharaStat.CheckedChanged += new System.EventHandler(this.buttonItemCharaStat_CheckedChanged);
             // 
             // itemContainer31
@@ -722,7 +722,7 @@
             this.buttonItemCharaEquip.AutoCheckOnClick = true;
             this.buttonItemCharaEquip.Name = "buttonItemCharaEquip";
             this.buttonItemCharaEquip.Text = "Equip";
-            this.buttonItemCharaEquip.Tooltip = "开启/关闭装备栏";
+            this.buttonItemCharaEquip.Tooltip = "Open/Close Equips";
             this.buttonItemCharaEquip.CheckedChanged += new System.EventHandler(this.buttonItemCharaEquip_CheckedChanged);
             // 
             // itemContainer32
@@ -760,7 +760,7 @@
             // 
             this.buttonItemAddItem.Name = "buttonItemAddItem";
             this.buttonItemAddItem.Text = "AddItem";
-            this.buttonItemAddItem.Tooltip = "把最后预览的装备或道具添加至背包";
+            this.buttonItemAddItem.Tooltip = "Add last preview item to inventory";
             this.buttonItemAddItem.Click += new System.EventHandler(this.buttonItemAddItem_Click);
             // 
             // itemContainer34
@@ -1392,7 +1392,7 @@
             this.ribbonBar11.Size = new System.Drawing.Size(69, 91);
             this.ribbonBar11.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar11.TabIndex = 2;
-            this.ribbonBar11.Text = "测试用";
+            this.ribbonBar11.Text = "Test";
             // 
             // 
             // 
@@ -1406,7 +1406,7 @@
             // 
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.SubItemsExpandWidth = 14;
-            this.buttonItem1.Text = "不要按我";
+            this.buttonItem1.Text = "Don't push me";
             this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click);
             // 
             // ribbonBar7
@@ -1718,7 +1718,7 @@
             // labelItemStatus
             // 
             this.labelItemStatus.Name = "labelItemStatus";
-            this.labelItemStatus.Text = "kira~";
+            this.labelItemStatus.Text = "Status";
             this.labelItemStatus.TextChanged += new System.EventHandler(this.labelItemStatus_TextChanged);
             // 
             // progressBarItem1
@@ -1802,10 +1802,10 @@
             this.superTabControl1.Location = new System.Drawing.Point(0, 0);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
-            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.superTabControl1.SelectedTabIndex = 0;
             this.superTabControl1.Size = new System.Drawing.Size(530, 228);
-            this.superTabControl1.TabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.superTabControl1.TabFont = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.superTabControl1.TabIndex = 0;
             this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnNodeBack,
@@ -2748,7 +2748,7 @@
             this.bar1.CanDockTop = false;
             this.bar1.CloseSingleTab = true;
             this.bar1.Controls.Add(this.panelDockContainer1);
-            this.bar1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.bar1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.bar1.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.Caption;
             this.bar1.IsMaximized = false;
             this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -2761,7 +2761,7 @@
             this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.bar1.TabIndex = 0;
             this.bar1.TabStop = false;
-            this.bar1.Text = "搜索结果";
+            this.bar1.Text = "Search Results";
             // 
             // panelDockContainer1
             // 
@@ -2782,7 +2782,7 @@
             // 
             this.dockContainerItem1.Control = this.panelDockContainer1;
             this.dockContainerItem1.Name = "dockContainerItem1";
-            this.dockContainerItem1.Text = "搜索结果";
+            this.dockContainerItem1.Text = "Search Results";
             // 
             // dockSite1
             // 
@@ -2892,7 +2892,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(750, 513);
             this.Name = "MainForm";
-            this.Text = "WzComparerR2";
+            this.Text = "WzComparerR2 [EN]";
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel2.ResumeLayout(false);

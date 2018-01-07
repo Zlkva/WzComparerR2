@@ -585,7 +585,7 @@ namespace WzComparerR2
         {
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                dlg.Title = "Plelase select Wz file...";
+                dlg.Title = "Please select Wz file...";
                 dlg.Filter = "base.wz|*.wz";
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {

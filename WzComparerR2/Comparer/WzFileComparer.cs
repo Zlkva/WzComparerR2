@@ -282,7 +282,7 @@ namespace WzComparerR2.Comparer
                         r++;
                         break;
                     default:
-                        throw new Exception("什么鬼");
+                        throw new Exception("WTF");
                 }
             }
         }
