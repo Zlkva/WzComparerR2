@@ -82,7 +82,7 @@ namespace WzComparerR2.MapRender.UI
             TextBlock lblHint = new TextBlock();
             lblHint.Foreground = Brushes.Yellow;
             lblHint.VerticalAlignment = VerticalAlignment.Center;
-            lblHint.Text = "* 某些选项需要重启MapRender才能生效。";
+            lblHint.Text = "* Restart MapRender for settings to take effect.";
             lblHint.Margin = new Thickness(20, 0, 0, 0);
             grid.Children.Add(lblHint);
             Grid.SetRow(lblHint, 2);
@@ -145,14 +145,14 @@ namespace WzComparerR2.MapRender.UI
 
             TextBlock lbl1 = new TextBlock();
             lbl1.VerticalAlignment = VerticalAlignment.Center;
-            lbl1.Text = "背景音乐";
+            lbl1.Text = "BGM";
             lbl1.Foreground = Brushes.Yellow;
             Grid.SetRow(lbl1, 0);
             Grid.SetColumn(lbl1, 0);
             grid.Children.Add(lbl1);
 
             CheckBox chk1 = new CheckBox();
-            chk1.Content = "不在最前时自动静音";
+            chk1.Content = "Auto-mute when Window not focused";
             chk1.Margin = new Thickness(18, 0, 0, 0);
             chk1.SetBinding(CheckBox.IsCheckedProperty, new Binding(nameof(UIOptionsDataModel.MuteOnLeaveFocus)));
             Grid.SetRow(chk1, 1);
@@ -172,7 +172,7 @@ namespace WzComparerR2.MapRender.UI
             lbl2.HorizontalAlignment = HorizontalAlignment.Center;
             lbl2.VerticalAlignment = VerticalAlignment.Center;
             lbl2.Padding = new Thickness(24, 0, 0, 0);
-            lbl2.Text = "音量";
+            lbl2.Text = "Volume";
             pnl1.Children.Add(lbl2);
 
             Slider slider1 = new Slider();
@@ -196,7 +196,7 @@ namespace WzComparerR2.MapRender.UI
 
             TextBlock lbl3 = new TextBlock();
             lbl3.VerticalAlignment = VerticalAlignment.Center;
-            lbl3.Text = "默认字体";
+            lbl3.Text = "Default Font";
             lbl3.Foreground = Brushes.Yellow;
             Grid.SetRow(lbl3, 3);
             Grid.SetColumn(lbl3, 0);
@@ -211,14 +211,14 @@ namespace WzComparerR2.MapRender.UI
 
             TextBlock lbl4 = new TextBlock();
             lbl4.VerticalAlignment = VerticalAlignment.Center;
-            lbl4.Text = "地图视窗";
+            lbl4.Text = "Map Window";
             lbl4.Foreground = Brushes.Yellow;
             Grid.SetRow(lbl4, 4);
             Grid.SetColumn(lbl4, 0);
             grid.Children.Add(lbl4);
 
             CheckBox chk2 = new CheckBox();
-            chk2.Content = "限制地图范围";
+            chk2.Content = "Limit Map Range";
             chk2.Margin = new Thickness(18, 0, 0, 0);
             chk2.SetBinding(CheckBox.IsCheckedProperty, new Binding(nameof(UIOptionsDataModel.ClipMapRegion)));
             Grid.SetRow(chk2, 5);
@@ -237,7 +237,7 @@ namespace WzComparerR2.MapRender.UI
             grid.ColumnDefinitions.Add(new ColumnDefinition());
 
             CheckBox chk1 = new CheckBox();
-            chk1.Content = "开启TopBar";
+            chk1.Content = "Open Topbar";
             chk1.SetBinding(CheckBox.IsCheckedProperty, new Binding(nameof(UIOptionsDataModel.TopBarVisible)));
             Grid.SetRow(chk1, 0);
             Grid.SetColumn(chk1, 0);
@@ -255,7 +255,7 @@ namespace WzComparerR2.MapRender.UI
             grid.ColumnDefinitions.Add(new ColumnDefinition());
 
             CheckBox chk1 = new CheckBox();
-            chk1.Content = "显示可视区域";
+            chk1.Content = "Show Viewable Area";
             chk1.SetBinding(CheckBox.IsCheckedProperty, new Binding(nameof(UIOptionsDataModel.Minimap_CameraRegionVisible)));
             Grid.SetRow(chk1, 0);
             Grid.SetColumn(chk1, 0);
@@ -273,7 +273,7 @@ namespace WzComparerR2.MapRender.UI
             grid.ColumnDefinitions.Add(new ColumnDefinition());
 
             CheckBox chk1 = new CheckBox();
-            chk1.Content = "以Image名称作为Name";
+            chk1.Content = "Use image name as name";
             chk1.SetBinding(CheckBox.IsCheckedProperty, new Binding(nameof(UIOptionsDataModel.WorldMap_UseImageNameAsInfoName)));
             Grid.SetRow(chk1, 0);
             Grid.SetColumn(chk1, 0);
@@ -290,15 +290,15 @@ namespace WzComparerR2.MapRender.UI
 
             var tips = new[]
             {
-                 "快捷键指示：",
+                 "Shortcuts：",
                  "",
-                 "M 小地图",
-                 "W 大地图",
-                 "Esc 设置",
-                 "Ctrl+1~9 开关图层",
-                 "Ctrl+U 解除地图范围锁定",
-                 "Alt+Enter 切换分辨率",
-                 "ScrollLock 截图",
+                 "M - Small Map",
+                 "W - Big Map",
+                 "Esc - Settings",
+                 "Ctrl+1~9 - Switch Layer",
+                 "Ctrl+U - Remove map range lock",
+                 "Alt+Enter - Change Resolution",
+                 "ScrollLock - Screenshot",
             };
             
             foreach(var tip in tips)

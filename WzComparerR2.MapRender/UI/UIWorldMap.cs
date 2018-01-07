@@ -103,7 +103,7 @@ namespace WzComparerR2.MapRender.UI
             Button btnBack = new Button();
             btnBack.Width = 50;
             btnBack.Height = 20;
-            btnBack.Content = "返回";
+            btnBack.Content = "Return";
             btnBack.Click += BtnBack_Click;
             Canvas.SetLeft(btnBack, 180);
             Canvas.SetTop(btnBack, 23);

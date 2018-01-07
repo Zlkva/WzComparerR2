@@ -86,13 +86,13 @@ namespace WzComparerR2.MapRender.UI
         public static StringBuilder GetLifeElemAttrString(ref LifeInfo.ElemAttr elemAttr)
         {
             StringBuilder sb = new StringBuilder(14);
-            sb.Append(GetElemResistanceString("冰", elemAttr.I));
-            sb.Append(GetElemResistanceString("雷", elemAttr.L));
-            sb.Append(GetElemResistanceString("火", elemAttr.F));
-            sb.Append(GetElemResistanceString("毒", elemAttr.S));
-            sb.Append(GetElemResistanceString("圣", elemAttr.H));
-            sb.Append(GetElemResistanceString("暗", elemAttr.D));
-            sb.Append(GetElemResistanceString("物", elemAttr.P));
+            sb.Append(GetElemResistanceString("Ice", elemAttr.I));
+            sb.Append(GetElemResistanceString("Lightning", elemAttr.L));
+            sb.Append(GetElemResistanceString("Fire", elemAttr.F));
+            sb.Append(GetElemResistanceString("Poison", elemAttr.S));
+            sb.Append(GetElemResistanceString("Holy", elemAttr.H));
+            sb.Append(GetElemResistanceString("Dark", elemAttr.D));
+            sb.Append(GetElemResistanceString("Physical", elemAttr.P));
             return sb;
         }
 
@@ -113,16 +113,16 @@ namespace WzComparerR2.MapRender.UI
         {
             switch (pType)
             {
-                case 0: return "地图出生点";
-                case 1: return "一般传送门(隐藏)";
-                case 2: return "一般传送门";
-                case 3: return "一般传送门(接触)";
-                case 6: return "时空门入口点";
-                case 7: return "脚本传送门";
-                case 8: return "脚本传送门(隐藏)";
-                case 9: return "脚本传送门(接触)";
-                case 10: return "地图内传送门";
-                case 12: return "弹力装置";
+                case 0: return "Map Starting Point";
+                case 1: return "General Portal (Hidden)";
+                case 2: return "General Portal";
+                case 3: return "General Portal (Contact)";
+                case 6: return "Timed Portal";
+                case 7: return "Scripted Portal";
+                case 8: return "Scripted Portal (Hidden)";
+                case 9: return "Scripted Portal (Contact)";
+                case 10: return "Map Warp Portal";
+                case 12: return "Bounce Portal";
                 default: return null;
             }
         }
