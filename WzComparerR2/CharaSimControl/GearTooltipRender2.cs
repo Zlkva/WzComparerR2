@@ -175,8 +175,8 @@ namespace WzComparerR2.CharaSimControl
             string nameAdd = Gear.ScrollUp > 0 ? ("+" + Gear.ScrollUp) : null;
             switch (Gear.GetGender(Gear.ItemID))
             {
-                case 0: nameAdd += "男"; break;
-                case 1: nameAdd += "女"; break;
+                case 0: nameAdd += "Male"; break;
+                case 1: nameAdd += "Female"; break;
             }
             if (!string.IsNullOrEmpty(nameAdd))
             {
@@ -235,14 +235,14 @@ namespace WzComparerR2.CharaSimControl
             if (Gear.TimeLimited)
             {
                 DateTime time = DateTime.Now.AddDays(7d);
-                string expireStr = time.ToString("到yyyy年 M月 d日 H时 m分可以用");
+                string expireStr = time.ToString("Expires yyyy M d H m");
                 g.DrawString(expireStr, GearGraphics.ItemDetailFont, Brushes.White, 130, picH, format);
                 picH += 15;
             }
             else if (Gear.GetBooleanValue(GearPropType.abilityTimeLimited))
             {
                 DateTime time = DateTime.Now.AddDays(7d);
-                string expireStr = time.ToString("效果持续到yyyy年M月d日H点m分");
+                string expireStr = time.ToString("The effect lasts until yyyy M d H m");
                 g.DrawString(expireStr, GearGraphics.ItemDetailFont, Brushes.White, 130, picH, format);
                 picH += 15;
             }
@@ -311,7 +311,7 @@ namespace WzComparerR2.CharaSimControl
 
             //绘制攻击力变化
             format.Alignment = StringAlignment.Far;
-            g.DrawString("攻击力提升", GearGraphics.ItemDetailFont, GearGraphics.GrayBrush2, 251, picH + 10, format);
+            g.DrawString("Increases ATT ", GearGraphics.ItemDetailFont, GearGraphics.GrayBrush2, 251, picH + 10, format);
             g.DrawImage(Resource.UIToolTip_img_Item_Equip_Summary_incline_0, 249 - 19, picH + 27); //暂时画个0
 
             //绘制属性需求
@@ -335,12 +335,12 @@ namespace WzComparerR2.CharaSimControl
             //绘制属性
             if (Gear.Props.TryGetValue(GearPropType.superiorEqp, out value) && value > 0)
             {
-                g.DrawString("极真", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picH, format);
+                g.DrawString("Very True", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picH, format);
                 picH += 16;
             }
             if (Gear.Props.TryGetValue(GearPropType.limitBreak, out value) && value > 0)
             {
-                g.DrawString("突破上限武器", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picH, format);
+                g.DrawString("Limit Break", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picH, format);
                 picH += 16;
             }
 
@@ -348,25 +348,25 @@ namespace WzComparerR2.CharaSimControl
             if (Gear.Props.TryGetValue(GearPropType.level, out value) && !Gear.FixLevel)
             {
                 bool max = (Gear.Levels != null && value >= Gear.Levels.Count);
-                g.DrawString("成长等级: " + (max ? "MAX" : value.ToString()), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
+                g.DrawString("Growth level: " + (max ? "MAX" : value.ToString()), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
                 picH += 16;
-                g.DrawString("成长经验值: " + (max ? "MAX" : "0%"), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
+                g.DrawString("Growth EXP: " + (max ? "MAX" : "0%"), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
                 picH += 16;
             }
 
             if (Gear.Props.TryGetValue(GearPropType.@sealed, out value))
             {
                 bool max = (Gear.Seals != null && value >= Gear.Seals.Count);
-                g.DrawString("封印解除阶段 : " + (max ? "MAX" : value.ToString()), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
+                g.DrawString("Seal release : " + (max ? "MAX" : value.ToString()), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
                 picH += 16;
-                g.DrawString("封印解除经验值 : " + (max ? "MAX" : "0%"), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
+                g.DrawString("EXP value of seal release : " + (max ? "MAX" : "0%"), GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 11, picH);
                 picH += 16;
             }
 
             //绘制耐久度
             if (Gear.Props.TryGetValue(GearPropType.durability, out value))
             {
-                g.DrawString("耐久度 : " + "100%", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 11, picH);
+                g.DrawString("Durability : " + "100%", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 11, picH);
                 picH += 16;
             }
 
@@ -377,20 +377,20 @@ namespace WzComparerR2.CharaSimControl
             {
                 if (isWeapon)
                 {
-                    typeStr = "武器分类 : " + typeStr;
+                    typeStr = "Weapon classification : " + typeStr;
                 }
                 else
                 {
-                    typeStr = "装备分类 : " + typeStr;
+                    typeStr = "Equipment classificatiion : " + typeStr;
                 }
 
                 if (Gear.IsLeftWeapon(Gear.type) || Gear.type == GearType.katara)
                 {
-                    typeStr += " (单手武器)";
+                    typeStr += " (One-handed Weapons)";
                 }
                 else if (Gear.IsDoubleHandWeapon(Gear.type))
                 {
-                    typeStr += " (双手武器)";
+                    typeStr += " (Two-handed Weapons)";
                 }
                 g.DrawString(typeStr, GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                 picH += 16;
@@ -405,7 +405,7 @@ namespace WzComparerR2.CharaSimControl
             //  if (gear.Props.TryGetValue(GearPropType.attackSpeed, out value) && value > 0)
             if (value > 0)
             {
-                g.DrawString("攻击速度 : " + ItemStringHelper.GetAttackSpeedString(value) + (ShowSpeed ? (" (" + value + ")") : null),
+                g.DrawString("ATT Speed : " + ItemStringHelper.GetAttackSpeedString(value) + (ShowSpeed ? (" (" + value + ")") : null),
                     GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                 picH += 16;
                 hasPart2 = true;
@@ -413,7 +413,7 @@ namespace WzComparerR2.CharaSimControl
             //机器人等级
             if (Gear.Props.TryGetValue(GearPropType.grade, out value) && value > 0)
             {
-                g.DrawString("等级 : " + value, GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
+                g.DrawString("Rank : " + value, GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                 picH += 16;
                 hasPart2 = true;
             }
@@ -466,12 +466,12 @@ namespace WzComparerR2.CharaSimControl
             bool hasTuc = Gear.HasTuc && Gear.Props.TryGetValue(GearPropType.tuc, out value);
             if (Gear.GetBooleanValue(GearPropType.exceptUpgrade))
             {
-                g.DrawString("无法强化", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
+                g.DrawString("Cannot be upgraded", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                 picH += 16;
             }
             else if (hasTuc)
             {
-                g.DrawString("可升级次数 : " + value + "回", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
+                g.DrawString("Can be upgraded : " + value + "time(s)", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                 picH += 16;
                 hasPart2 = true;
             }
@@ -481,7 +481,7 @@ namespace WzComparerR2.CharaSimControl
             {
                 if (Gear.Hammer == 2)
                 {
-                    g.DrawString("黄金锤提炼完成", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
+                    g.DrawString("Golden Hammer upgrade complete", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                     picH += 16;
                 }
                 if (Gear.Props.TryGetValue(GearPropType.superiorEqp, out value) && value > 0) //极真
@@ -496,12 +496,12 @@ namespace WzComparerR2.CharaSimControl
 
                     if (Gear.Star > 0) //星星
                     {
-                        g.DrawString("适用" + Gear.Star + "星强化(最高" + maxStar + "星)", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
+                        g.DrawString("For" + Gear.Star + "star enhancement (Up to" + maxStar + "stars)", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                         picH += 16;
                     }
                     else
                     {
-                        g.DrawString("最高可强化到" + maxStar + "星", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
+                        g.DrawString("Can be enhanced up to" + maxStar + "time(s)", GearGraphics.ItemDetailFont, Brushes.White, 11, picH);
                         picH += 16;
                     }
                 }
@@ -517,7 +517,7 @@ namespace WzComparerR2.CharaSimControl
             if (hasTuc && Gear.Hammer > -1)
             {
                 picH += 2;
-                g.DrawString("金锤子已提高的强化次数", GearGraphics.ItemDetailFont, GearGraphics.GoldHammerBrush, 11, picH);
+                g.DrawString("The golden hammer has increased the number of slots", GearGraphics.ItemDetailFont, GearGraphics.GoldHammerBrush, 11, picH);
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
                 g.DrawString(": " + Gear.Hammer.ToString() + (Gear.Hammer == 2 ? "(MAX)" : null), GearGraphics.TahomaFont, GearGraphics.GoldHammerBrush, 145, picH - 2);
                 g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -541,7 +541,7 @@ namespace WzComparerR2.CharaSimControl
                 {
                     int reqLvl;
                     Gear.Props.TryGetValue(GearPropType.reqLevel, out reqLvl);
-                    g.DrawString("增加各角色等级能力值(" + reqLvl + "Lv为止)", GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 130, picH, format);
+                    g.DrawString("Added ability level by character level (up to" + reqLvl + "Lv)", GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush3, 130, picH, format);
                     picH += 20;
 
                     int reduceLvl;
@@ -563,7 +563,7 @@ namespace WzComparerR2.CharaSimControl
 
                     if (hasReduce)
                     {
-                        g.DrawString("升级及强化时，视做" + reqLvl + "Lv武器", GearGraphics.ItemDetailFont, GearGraphics.GrayBrush2, 12, picH, StringFormat.GenericTypographic);
+                        g.DrawString("When scrolling and enhancing, item is treated as an" + reqLvl + "Lv weapon", GearGraphics.ItemDetailFont, GearGraphics.GrayBrush2, 12, picH, StringFormat.GenericTypographic);
                         picH += 16;
                     }
                 }
@@ -588,7 +588,7 @@ namespace WzComparerR2.CharaSimControl
                     picH += 8;
                 }
                 g.DrawImage(GetAdditionalOptionIcon(Gear.Grade), 8, picH - 1);
-                g.DrawString("潜在属性", GearGraphics.ItemDetailFont, GearGraphics.GetPotentialTextBrush(Gear.Grade), 26, picH);
+                g.DrawString("Potential", GearGraphics.ItemDetailFont, GearGraphics.GetPotentialTextBrush(Gear.Grade), 26, picH);
                 picH += 17;
                 foreach (Potential potential in Gear.Options)
                 {
@@ -628,7 +628,7 @@ namespace WzComparerR2.CharaSimControl
                     picH += 8;
                 }
                 g.DrawImage(GetAdditionalOptionIcon(Gear.AdditionGrade), 8, picH - 1);
-                g.DrawString("附加潜能", GearGraphics.ItemDetailFont, GearGraphics.GetPotentialTextBrush(Gear.AdditionGrade), 26, picH);
+                g.DrawString("Additional Potential", GearGraphics.ItemDetailFont, GearGraphics.GetPotentialTextBrush(Gear.AdditionGrade), 26, picH);
                 picH += 17;
 
                 foreach (Potential potential in Gear.AdditionalOptions)
@@ -669,7 +669,7 @@ namespace WzComparerR2.CharaSimControl
                     GearPropType.charmEXP };
 
                 string[] inclineString = new string[]{
-                    "领导力","感性","洞察力","意志","手技","魅力"};
+                    "Ambition","Empathy","Insight","Willpower","Dilligence","Charm"};
 
                 for (int i = 0; i < inclineTypes.Length; i++)
                 {
@@ -681,7 +681,7 @@ namespace WzComparerR2.CharaSimControl
 
                 if (!string.IsNullOrEmpty(incline))
                 {
-                    desc.Add("\n #c装备时可以获得" + incline.Substring(1) + "的经验值，仅限1次。#");
+                    desc.Add("\n #cYou gain" + incline.Substring(1) + " experience only once at the time of equipping#");
                 }
             }
 
@@ -801,18 +801,18 @@ namespace WzComparerR2.CharaSimControl
                     g = Graphics.FromImage(levelOrSealed);
                 }
                 picHeight += 13;
-                g.DrawString("装备成长属性", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picHeight, format);
+                g.DrawString("Equipment growth properties", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picHeight, format);
                 picHeight += 16;
                 if (Gear.FixLevel)
                 {
-                    g.DrawString("[装备获取时固定等级]", GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush, 130, picHeight, format);
+                    g.DrawString("[Equip restricted at fixed level]", GearGraphics.ItemDetailFont, GearGraphics.OrangeBrush, 130, picHeight, format);
                     picHeight += 16;
                 }
 
                 for (int i = 0; i < Gear.Levels.Count; i++)
                 {
                     var info = Gear.Levels[i];
-                    g.DrawString("等级 " + info.Level + (i >= Gear.Levels.Count - 1 ? "(MAX)" : null), GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 10, picHeight);
+                    g.DrawString("Rank " + info.Level + (i >= Gear.Levels.Count - 1 ? "(MAX)" : null), GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 10, picHeight);
                     picHeight += 16;
                     foreach (var kv in info.BonusProps)
                     {
@@ -828,7 +828,7 @@ namespace WzComparerR2.CharaSimControl
                     }
                     if (info.Skills.Count > 0)
                     {
-                        string title = string.Format("有 {2:P2}({0}/{1}) 的几率获得技能 :", info.Prob, info.ProbTotal, info.Prob * 1.0 / info.ProbTotal);
+                        string title = string.Format("Has {2:P2}({0}/{1}) chance to gain skills :", info.Prob, info.ProbTotal, info.Prob * 1.0 / info.ProbTotal);
                         g.DrawString(title, GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight);
                         picHeight += 16;
                         foreach (var kv in info.Skills)
@@ -848,11 +848,11 @@ namespace WzComparerR2.CharaSimControl
                         string title;
                         if (info.Prob < info.ProbTotal)
                         {
-                            title = string.Format("有 {2:P2}({0}/{1}) 的几率装备时获得技能 :", info.Prob, info.ProbTotal, info.Prob * 1.0 / info.ProbTotal);
+                            title = string.Format("Has {2:P2}({0}/{1}) chance to gain skills when equipped :", info.Prob, info.ProbTotal, info.Prob * 1.0 / info.ProbTotal);
                         }
                         else
                         {
-                            title = "装备时获得技能 :";
+                            title = "Gain skill when equipped :";
                         }
                         g.DrawString(title, GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight);
                         picHeight += 16;
@@ -870,7 +870,7 @@ namespace WzComparerR2.CharaSimControl
                     }
                     if (info.Exp > 0)
                     {
-                        g.DrawString("经验成长率 : " + info.Exp + "%", GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight);
+                        g.DrawString("EXP growth rate of : " + info.Exp + "%", GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight);
                         picHeight += 16;
                     }
 
@@ -886,13 +886,13 @@ namespace WzComparerR2.CharaSimControl
                     g = Graphics.FromImage(levelOrSealed);
                 }
                 picHeight += 13;
-                g.DrawString("封印解除属性", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picHeight, format);
+                g.DrawString("Seal release attribute", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 130, picHeight, format);
                 picHeight += 16;
                 for (int i = 0; i < Gear.Seals.Count; i++)
                 {
                     var info = Gear.Seals[i];
 
-                    g.DrawString("等级 " + info.Level + (i >= Gear.Seals.Count - 1 ? "(MAX)" : null), GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 10, picHeight);
+                    g.DrawString("Rank " + info.Level + (i >= Gear.Seals.Count - 1 ? "(MAX)" : null), GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 10, picHeight);
                     picHeight += 16;
                     var props = this.IsCombineProperties ? Gear.CombineProperties(info.BonusProps) : info.BonusProps;
                     foreach (var kv in props)
@@ -906,14 +906,14 @@ namespace WzComparerR2.CharaSimControl
                         Bitmap icon = info.Icon.Bitmap ?? info.IconRaw.Bitmap;
                         if (icon != null)
                         {
-                            g.DrawString("图标 : ", GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight + icon.Height / 2 - 6);
+                            g.DrawString("Icon : ", GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight + icon.Height / 2 - 6);
                             g.DrawImage(icon, 52, picHeight);
                             picHeight += icon.Height;
                         }
                     }
                     if (info.Exp > 0)
                     {
-                        g.DrawString("经验成长率 : " + info.Exp + "%", GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight);
+                        g.DrawString("EXP Growth rate : " + info.Exp + "%", GearGraphics.ItemDetailFont, Brushes.White, 10, picHeight);
                         picHeight += 16;
                     }
                     picHeight += 2;

@@ -87,7 +87,7 @@ namespace WzComparerR2.CharaSimControl
 
                 if (string.IsNullOrEmpty(typeName) && SetItem.Parts)
                 {
-                    typeName = "装备";
+                    typeName = "Equipment";
                 }
 
                 if (string.IsNullOrEmpty(itemName) || string.IsNullOrEmpty(typeName))
@@ -112,7 +112,7 @@ namespace WzComparerR2.CharaSimControl
                                 {
                                     if (itemID.Key / 10000 == 500)
                                     {
-                                        typeName = "宠物";
+                                        typeName = "Pet";
                                     }
                                     else
                                     {
@@ -131,7 +131,7 @@ namespace WzComparerR2.CharaSimControl
                 }
 
                 itemName = itemName ?? string.Empty;
-                typeName = typeName ?? "装备";
+                typeName = typeName ?? "Equipment";
 
                 if (!Regex.IsMatch(typeName, @"^(\(.*\)|（.*）)$"))
                 {
@@ -176,7 +176,7 @@ namespace WzComparerR2.CharaSimControl
         {
             foreach (KeyValuePair<int, SetItemEffect> effect in this.SetItem.effects)
             {
-                g.DrawString(effect.Key + "套装效果", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 8, picHeight);
+                g.DrawString(effect.Key + "Set effect", GearGraphics.ItemDetailFont, GearGraphics.GreenBrush2, 8, picHeight);
                 picHeight += 16;
                 //Brush brush = effect.Value.Enabled ? Brushes.White : GearGraphics.GrayBrush2;
                 var color = effect.Value.Enabled ? Color.White : GearGraphics.GrayColor2;
@@ -212,7 +212,7 @@ namespace WzComparerR2.CharaSimControl
                                 sr = new StringResult();
                                 sr.Name = p.SkillID.ToString();
                             }
-                            string summary = "激活技能<" + sr.Name + "> Lv." + p.Level;
+                            string summary = "Activate skills <" + sr.Name + "> Lv." + p.Level;
                             GearGraphics.DrawPlainText(g, summary, GearGraphics.ItemDetailFont2, color, 10, 244, ref picHeight, 16);
                         }
                     }

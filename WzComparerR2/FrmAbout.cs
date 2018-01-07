@@ -47,7 +47,8 @@ namespace WzComparerR2
             this.advTree1.Nodes.Clear();
 
             this.advTree1.Nodes.Add(new Node(string.Format("GMS <font color=\"#808080\">v0.1</font>")));
-            this.advTree1.Nodes.Add(new Node(string.Format("[GMS] English Translation <font color=\"#808080\">Zelkova</font>")));
+            this.advTree1.Nodes.Add(new Node(string.Format("[GMS] English Translation <font color=\"#6773e9\">Zelkova</font>")));
+            this.advTree1.Nodes.Add(new Node(string.Format("[GMS] English Debug <font color=\"#e83232\">Saught</font>")));
 
             if (PluginBase.PluginManager.LoadedPlugins.Count > 0)
             {

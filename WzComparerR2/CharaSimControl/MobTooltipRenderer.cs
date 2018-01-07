@@ -57,31 +57,31 @@ namespace WzComparerR2.CharaSimControl
             }
             if (MobInfo.Undead)
             {
-                sbExt.Append("不死系 ");
+                sbExt.Append("Undead ");
             }
             if (MobInfo.FirstAttack)
             {
-                sbExt.Append("主动攻击 ");
+                sbExt.Append("Active attack ");
             }
             if (!MobInfo.BodyAttack)
             {
-                sbExt.Append("无触碰伤害 ");
+                sbExt.Append("No touch damage ");
             }
             if (MobInfo.DamagedByMob)
             {
-                sbExt.Append("只受怪物伤害 ");
+                sbExt.Append("Only monster damage ");
             }
             if (MobInfo.Invincible)
             {
-                sbExt.Append("无敌 ");
+                sbExt.Append("Invincible ");
             }
             if (MobInfo.NotAttack)
             {
-                sbExt.Append("无法攻击 ");
+                sbExt.Append("Cannot Attack ");
             }
             if (MobInfo.FixedDamage > 0)
             {
-                sbExt.Append("固定伤害" + MobInfo.FixedDamage + " ");
+                sbExt.Append("Fixed damage" + MobInfo.FixedDamage + " ");
             }
 
             if (sbExt.Length > 1)
@@ -93,7 +93,7 @@ namespace WzComparerR2.CharaSimControl
 
             if (MobInfo.RemoveAfter > 0)
             {
-                propBlocks.Add(PrepareText(g, "出生" + MobInfo.RemoveAfter + "秒后自动消失", GearGraphics.ItemDetailFont, Brushes.GreenYellow, 0, picY));
+                propBlocks.Add(PrepareText(g, "Remove mob after" + MobInfo.RemoveAfter + "seconds.", GearGraphics.ItemDetailFont, Brushes.GreenYellow, 0, picY));
                 picY += 16;
             }
 
@@ -124,7 +124,7 @@ namespace WzComparerR2.CharaSimControl
                 }
 
                 StringBuilder sb = new StringBuilder();
-                sb.Append("死后召唤 ");
+                sb.Append("Summoned after death ");
                 int rowCount = 0;
                 foreach (var kv in reviveCounts)
                 {
@@ -227,7 +227,7 @@ namespace WzComparerR2.CharaSimControl
             StringBuilder sb1 = new StringBuilder(),
                 sb2 = new StringBuilder();
 
-            sb1.Append("冰雷火毒圣暗物");
+            sb1.Append("Ice Lightning Fire Poison Holy Dark Physical");
             sb2.Append(GetElemAttrResistString(elemAttr.I));
             sb2.Append(GetElemAttrResistString(elemAttr.L));
             sb2.Append(GetElemAttrResistString(elemAttr.F));
