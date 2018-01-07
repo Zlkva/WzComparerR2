@@ -175,7 +175,7 @@ env:WriteLine(string format, object[] args)");
         {
             if (e.CloseReason == CloseReason.UserClosing && this.isRunning)
             {
-                if (DialogResult.Yes == MessageBoxEx.Show("还有未完成的任务，是否关闭？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                if (DialogResult.Yes == MessageBoxEx.Show("There are unfinished tasks，still close？", "Notice", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                 {
                     e.Cancel = false;
                 }
@@ -222,7 +222,7 @@ env:WriteLine(string format, object[] args)");
             if (!isRunning)
             {
                 InitLuaEnv();
-                textBoxX2.AppendText("===虚拟机已重置===\r\n");
+                textBoxX2.AppendText("===The VM is reset===\r\n");
             }
         }
 
@@ -289,7 +289,7 @@ env:WriteLine(string format, object[] args)");
             }
 
             editor.SaveFile(editor.FileName);
-            textBoxX2.AppendText($"====已经保存{editor.FileName}====");
+            textBoxX2.AppendText($"====Saved {editor.FileName}====");
         }
     }
 }
