@@ -61,7 +61,7 @@ namespace WzComparerR2.Comparer
         {
             StateInfo = "Comparing Wz...";
            
-            if (fileNew.Type == Wz_Type.Base || fileOld.Type == Wz_Type.Base) //至少有一个base 拆分对比
+            if (fileNew.Type == Wz_Type.Base || fileOld.Type == Wz_Type.Base) //At least one base split comparison
             {
                 var virtualNodeNew = RebuildWzFile(fileNew);
                 var virtualNodeOld = RebuildWzFile(fileOld);
@@ -71,7 +71,7 @@ namespace WzComparerR2.Comparer
                 var dictNew = SplitVirtualNode(virtualNodeNew);
                 var dictOld = SplitVirtualNode(virtualNodeOld);
 
-                //寻找共同wzType
+                //Find a common Wztype
                 var wzTypeList = dictNew.Select(kv => kv.Key)
                     .Where(wzType => dictOld.ContainsKey(wzType));
 
@@ -89,7 +89,7 @@ namespace WzComparerR2.Comparer
                         outputDir);
                 }
             }
-            else //执行传统对比
+            else //Perform traditional comparisons
             {
                 WzFileComparer comparer = new WzFileComparer();
                 comparer.IgnoreWzFile = false;
@@ -103,18 +103,18 @@ namespace WzComparerR2.Comparer
 
         private WzVirtualNode RebuildWzFile(Wz_File wzFile)
         {
-            //分组
+            //Group
             List<Wz_File> subFiles = new List<Wz_File>();
             WzVirtualNode topNode = new WzVirtualNode(wzFile.Node);
 
             foreach (var childNode in wzFile.Node.Nodes)
             {
                 var subFile = childNode.GetValue<Wz_File>();
-                if (subFile != null) //wz子文件
+                if (subFile != null) //wz Child Files
                 {
                     subFiles.Add(subFile);
                 }
-                else //其他
+                else //Other
                 {
                     topNode.AddChild(childNode, true);
                 }
@@ -142,7 +142,7 @@ namespace WzComparerR2.Comparer
             Wz_File wzFile = node.LinkNodes[0].Value as Wz_File;
             dict[wzFile.Type] = node;
 
-            if (wzFile.Type == Wz_Type.Base) //额外处理
+            if (wzFile.Type == Wz_Type.Base) //Extra Processing
             {
                 var wzFileList = node.ChildNodes
                     .Select(child => new { Node = child, WzFile = child.LinkNodes[0].Value as Wz_File })
@@ -213,7 +213,7 @@ namespace WzComparerR2.Comparer
                 sw.WriteLine("</table>");
                 sw.WriteLine("</p>");
 
-                //输出目录
+                //Output Directory
                 StringBuilder[] sb = { new StringBuilder(), new StringBuilder(), new StringBuilder() };
                 int[] count = new int[6];
                 string[] diffStr = { "Modify", "Add", "Remove" };
@@ -323,7 +323,7 @@ namespace WzComparerR2.Comparer
                     }
 
                 }
-                //html结束
+                //html End
                 sw.WriteLine("</body>");
                 sw.WriteLine("</html>");
             }
